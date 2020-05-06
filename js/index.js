@@ -36,16 +36,16 @@ class EmpTable {
     for (let i = 0; i < this._el.length; i++) {
       htmlCode += `<tr><td>${this._el[i]._id}</td><td>${this._el[i]._name}</td><td>${this._el[i]._surname}</td><td>${this._el[i]._position}</td><td>${this._el[i]._salary}</td></tr>`;
     }
-    return htmlCode;
+    return `<table><tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Position</th>
+    <th>Salary</th>
+    </tr>${htmlCode}</table>`;
   }
 }
 
 let arr = new EmpTable(arrEmployee);
 
-document.write(`<table><tr>
-<td>ID</td>
-<td>Name</td>
-<td>Surname</td>
-<td>Position</td>
-<td>Salary</td>
-</tr>${arr.getHtml()}</table>`);
+document.write(arr.getHtml());
